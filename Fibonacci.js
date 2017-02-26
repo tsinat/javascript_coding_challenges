@@ -1,10 +1,11 @@
 //How do get nth Fibonacci number?
 
-function Fibonacci(num) {
+// iterative Fibonacci
+function FibonacciIterative(num) {
     let initial = 1,
         previous = 1;
         sum = 0;
-    if(num == 0 || num == 2) {
+    if(num < 2) {
         return 1;
     }
     while(num > 1) {
@@ -16,5 +17,20 @@ function Fibonacci(num) {
     return sum;
 }
 
-let test = Fibonacci(0);
-console.log('test:', test);
+// recursive Fibonacci
+let memo = []
+function Fibonacci(num) {
+    if(memo[num]) {
+        return memo[num];
+    }
+    else if(num < 2) {
+        return 1;
+    }
+    else {
+        memo[num] = Fibonacci(num - 1) + Fibonacci(num - 2);
+        return memo[num];
+    }
+}
+
+let testIterative = FibonacciIterative(10);
+let testRecursive = Fibonacci(1200);
