@@ -6,13 +6,16 @@
 
 function persistence(num) {
    let count = 0;
-   let temp =  num.toString().split('');
-   let prod = num
-   while(temp.length > 1){
-   		 let prod = temp.reduce((first, second) => Number(first) * Number(second), 1);
-  		 console.log('num and prod', num ,prod);
+   let prod = num.toString().split('');
+   while(prod.length > 1){
+   		 let temp = prod.reduce((first, second) => {
+              return Number(first) * Number(second);
+          }, 1);
+         prod = temp.toString().split('');
+         count++;
    }
-
+   return count;
 }
 
-persistence(30);
+let test = persistence(3234341);
+console.log('persistence:', test);
