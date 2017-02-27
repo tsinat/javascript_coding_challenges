@@ -7,6 +7,11 @@
 function persistence(num) {
    let count = 0;
    let prod = num.toString().split('');
+
+   if(prod.length == 1 || prod.indexOf('0') != -1) {
+       return 1;
+   }
+   
    while(prod.length > 1){
    		 let temp = prod.reduce((first, second) => {
               return Number(first) * Number(second);
@@ -17,5 +22,5 @@ function persistence(num) {
    return count;
 }
 
-let test = persistence(3234341);
+let test = persistence(32343410);
 console.log('persistence:', test);
