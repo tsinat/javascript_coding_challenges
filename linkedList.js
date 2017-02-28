@@ -43,6 +43,15 @@ LinkedList.prototype.removeTail = function() {
   return val;
 }
 
+LinkedList.prototype.search = function(searchValue) {
+  var currentNode = this.head;
+  while(currentNode) {
+    if(currentNode.value === searchValue) return currentNode;
+    currentNode = currentNode.next;
+  }
+  return null;
+}
+
 var ll = new LinkedList();
 ll.addToHead(100);
 ll.addToHead(200);
