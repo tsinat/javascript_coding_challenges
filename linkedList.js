@@ -52,6 +52,18 @@ LinkedList.prototype.search = function(searchValue) {
   return null;
 }
 
+LinkedList.prototype.indexOf = function(searchValue) {
+  var currentNode = this.head,
+      count = 0,
+      index = [];
+  while(currentNode) {
+    if(currentNode.value === searchValue) index.push(count);
+    count++;
+    currentNode = currentNode.next;
+  }
+  return index;
+}
+
 var ll = new LinkedList();
 ll.addToHead(100);
 ll.addToHead(200);
