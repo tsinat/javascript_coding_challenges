@@ -1,4 +1,4 @@
-// implementaion of hashtable using javascript
+//hashtable implementaion  using javascript
 
 function HashTable(size) {
     this.buckets = new Array(size);
