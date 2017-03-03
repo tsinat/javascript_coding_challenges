@@ -58,7 +58,27 @@ HashTable.prototype.get = function(key) {
     }
 }
 
+HashTable.prototype.retrieveAll = function() {
+    var arrayBucket = [];
+    for(var i = 0; i < this.numBucket; i++) {
+        if(this.buckets[i]) {
+            var currentNode = this.buckets[i];
+            if(!currentNode.next){
+                arrayBucket.push(currentNode);
+            }
+            else {
+                while(currentNode.next) {
+                    arrayBucket.push(currentNode);
+                    currentNode = currentNode.next;
+                }
+            }
+        }
+    }
+    return arrayBucket;
+}
+
 var myHT = new HashTable(30);
 myHT.insert('tsinat', 'cheru87@gmail.com')
 myHT.insert('tsinat', 'tsinatzeree@gmail.com')
-console.log(myHT.get('tsinat'));
+myHT.insert('cheru', 'tsinatzeree@gmail.com')
+console.log(myHT.retrieveAll());
