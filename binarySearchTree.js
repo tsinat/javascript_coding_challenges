@@ -45,7 +45,6 @@ BST.prototype.bredthFirstTraversal = function(iteratorFunc) {
     if(treeNode.left) queue.push(treeNode.left);
     if(treeNode.right) queue.push(treeNode.right);
   }
-
 }
 
 BST.prototype.getMinVal = function() {
@@ -70,8 +69,6 @@ bst.insert(100);
 bst.insert(59);
 bst.insert(85);
 bst.insert(105);
-
-// console.log(bst.left);
 
 console.log(bst.getMaxVal());
 
